@@ -31,3 +31,6 @@ app.get("/getuser", async (req, res) => {
 const port = 5000;
 
 app.listen(port, () => console.log(`Server running on ${port}`));
+
+
+module.exports = app;
