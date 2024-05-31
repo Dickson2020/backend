@@ -10,18 +10,18 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/createUser", async (req, res) => {
+app.post("/createuser", async (req, res) => {
   const userData = req.body;
   const user = await createUser(userData);
   res.json(user);
 });
 
-app.get("/getUsers", async (req, res) => {
+app.get("/getusers", async (req, res) => {
   const users = await getUsers();
   res.json(users);
 });
 
-app.get("/getUser", async (req, res) => {
+app.get("/getuser", async (req, res) => {
   const userId = req.query.userId;
   const user = await getUser(userId);
   res.json(user);
