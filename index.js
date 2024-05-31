@@ -13,21 +13,21 @@ app.get("/", (req, res) => {
 app.post("/createuser", async (req, res) => {
   const userData = req.body;
   const user = await createUser(userData);
-  res.json(user);
+  res.send(user);
 });
 
 app.get("/getusers", async (req, res) => {
   const users = await getUsers();
-  res.json(users);
+  res.send(users);
 });
 
 app.get("/getuser", async (req, res) => {
   const userId = req.query.userId;
   const user = await getUser(userId);
-  res.json(user);
+  res.send(user);
 });
 
 
-const port = 3000;
+const port = 5000;
 
 app.listen(port, () => console.log(`Server running on ${port}`));
