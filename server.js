@@ -5,6 +5,11 @@ const app = express();
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Welcome to my API!");
+});
+
+
 app.post("/createUser", async (req, res) => {
   const userData = req.body;
   const user = await createUser(userData);
