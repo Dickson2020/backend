@@ -1,5 +1,10 @@
+
+
 export default function handler(req, res) {
+ // const freshData = await fetchFreshData();
   
-  res.status(200).end('Hello Cron!');
+  // await updateCachedData(freshData);
+    
+  res.status(200).end('Cached data revalidated');
 }
 
