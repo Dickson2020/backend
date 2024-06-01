@@ -4,11 +4,7 @@
     {
       "src": "./index.js",
       "use": "@vercel/node",
-      "config": {
-        "prisma": {
-          "generate": true
-        }
-            }
+      
     }
   ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.js" }]
