@@ -2,8 +2,10 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-
 async function createUser(data) {
+  if (!data || !data.user_id || !data.counter) {
+    return { error: 'Missing required fields: user_id and counter' };
+  }
   const user = await prisma.networth.create({
     data,
   });
