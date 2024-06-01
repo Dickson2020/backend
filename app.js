@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-//const client = createClient();
+//const client = createClient(); jj
 
 async function createUser(data) {
   if (!data || !data.user_id || !data.counter) {
