@@ -8,6 +8,8 @@ generator client {
   output   = "./generated/client"
   type     = "datasource"
   preview  = false
+  engineType = "library"
+
 }
 
 datasource db {
