@@ -12,11 +12,11 @@ generator client {
 
 }
 
+
 datasource db {
   provider = "postgresql"
-  url      = "postgres://postgres.vviemvanlsxkhlcjrofx:4Yj2XIXKdsoU2EwC@aws-0-us-west-1.pooler.supabase.com:5432/postgres"
+  url      = env("DATABASE_URL")
 }
-
 
 model networth {
 id  Int   @id @default(autoincrement())
