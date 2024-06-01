@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 
 app.post("/createuser", async (req, res) => {
   const userData = req.body;
-  const user = await createUser(userData); 
+  const user = await createUser(req); 
   res.json(user);
 });
 
