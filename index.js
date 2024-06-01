@@ -29,7 +29,7 @@ app.get("/getuser", async (req, res) => {
 
 app.get("/updateuser", async (req, res) => {
   const userId = req.query.user_id;
-  const userData = req.query.counter;
+  const userData = req.query;
   const user = await updateUser(userId, userData);
   res.json(user);
 });
