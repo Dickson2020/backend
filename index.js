@@ -6,9 +6,8 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json("Prisma and Supabase running...");
+  res.json("Prisma and Supabase started..");
 });
-
 
 app.post("/createuser", async (req, res) => {
   const userData = req.body;
