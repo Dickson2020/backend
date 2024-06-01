@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json("Prisma and Supabase started..");
+  res.json("Prisma and Supabase started");
 });
 
 app.get("/createuser", async (req, res) => {
