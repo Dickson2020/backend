@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json("Welcome to my API!");
+  res.json("Prisma and Supabase running...");
 });
 
 
