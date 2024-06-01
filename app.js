@@ -1,6 +1,10 @@
 import { PrismaClient } from '@prisma/client'
+import { createClient } from 'redis';
 
 const prisma = new PrismaClient()
+
+const client = createClient();
+
 
 async function createUser(data) {
   if (!data || !data.user_id || !data.counter) {
@@ -22,6 +26,7 @@ async function updateUser(userId, data) {
 
 async function getUsers() {
   const allUsers = await prisma.networth.findMany();
+  client.set('allUsers', allUsers);
   return allUsers;
 }
 
