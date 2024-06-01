@@ -8,9 +8,7 @@
   },
   "scripts": {
 "start": "node index.js",
- "postinstall": "prisma generate",
-"install:prisma": "npm install -g prisma"
-  
+ "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "",
