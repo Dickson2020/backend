@@ -26,7 +26,7 @@ async function updateUser(userId, data) {
 
 async function fetchData() {
   try {
-    const value = await client.get('key');
+    const value = await client.get('allUsers');
     console.log(value); // Output: value
 
     return value
@@ -40,8 +40,16 @@ async function fetchData() {
 async function getUsers() {
   const allUsers = await prisma.networth.findMany();
   client.set('allUsers', allUsers);
-  fetchData() 
- // return allUsers;
+ try {
+    const value = await client.get('allUsers');
+    console.log(value); // Output: value
+
+    return value
+  } catch (err) {
+    console.error(err);
+
+    return err
+  } // return allUsers;
 }
 
 
