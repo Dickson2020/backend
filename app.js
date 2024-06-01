@@ -5,7 +5,6 @@ const prisma = new PrismaClient()
 
 const client = createClient();
 
-
 async function createUser(data) {
   if (!data || !data.user_id || !data.counter) {
     return { error: data };
