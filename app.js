@@ -1,9 +1,7 @@
 import { PrismaClient } from './generated/client/edge'
-//const prisma = new PrismaClient()
-const prisma = new PrismaClient({
-  datasourceUrl:
-    "postgres://postgres.vviemvanlsxkhlcjrofx:4Yj2XIXKdsoU2EwC@aws-0-us-west-1.pooler.supabase.com:5432/postgres",
-});
+
+const prisma = new PrismaClient()
+
 
 async function createUser(data) {
   const user = await prisma.networth.create({
