@@ -32,6 +32,3 @@ const port = 5000;
 
 app.listen(port, () => console.log(`Server running on ${port}`));
 
-module.exports = (req, res) => {
-  res.status(200).json({ message: 'Hello, World!' });
-};
