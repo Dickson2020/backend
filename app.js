@@ -24,11 +24,27 @@ async function updateUser(userId, data) {
   return updatedUser;
 }
 
+async function fetchData() {
+  try {
+    const value = await client.get('key');
+    console.log(value); // Output: value
+
+    return value
+  } catch (err) {
+    console.error(err);
+
+    return err
+  }
+}
+
 async function getUsers() {
   const allUsers = await prisma.networth.findMany();
   client.set('allUsers', allUsers);
-  return allUsers;
+  fetchData() 
+ // return allUsers;
 }
+
+
 
 async function getUser(userId) {
   const user = await prisma.networth.findUnique({
