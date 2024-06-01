@@ -9,11 +9,14 @@ app.get("/", (req, res) => {
   res.json("Prisma and Supabase started..");
 });
 
-app.post("/createuser", async (req, res) => {
-  const userData = req.body;
-  const user = await createUser(req); 
+
+app.get("/createuser", async (req, res) => {
+  console.log(req.query); // Add this line
+  const userData = req.query;
+  const user = await createUser(userData);
   res.json(user);
 });
+
 
 app.get("/getusers", async (req, res) => {
   const users = await getUsers();
