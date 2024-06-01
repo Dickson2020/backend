@@ -11,7 +11,7 @@
       }
     }
   ],
-  "rewrites": [
+   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.js"
