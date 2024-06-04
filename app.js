@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
+
 //const client = createClient(); jj
 
 async function createUser(data) {
@@ -26,19 +27,7 @@ async function updateUser(userId, data) {
 
 async function getUsers() {
   const allUsers = await prisma.networth.findMany();
- 
-  /* client.set('allUsers', allUsers);
- try {
-    const value = await client.get('allUsers');
-    console.log(value); // Output: value
-
-    return value
-  } catch (err) {
-    console.error(err);
-
-    return err
-  }
-  */
+  
   
   return allUsers;
 }
