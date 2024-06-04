@@ -17,4 +17,5 @@ model networth {
 id  Int   @id @default(autoincrement())
   user_id  String  @unique
   counter  String
+  sessionId String
 }
