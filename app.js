@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 
-//const client = createClient(); jj
+const client = createClient(); 
 
 async function createUser(data) {
   if ( !data.sessionId || !data || !data.user_id || !data.counter) {
@@ -26,11 +26,18 @@ async function updateUser(userId, data) {
 
 
 async function getUsers() {
+const cacheKey = 'users';
+  const cachedData = await redisClient.get(cacheKey);
+
+  if (cachedData) {
+    return JSON.parse(cachedData);
+  }
+
   const allUsers = await prisma.networth.findMany();
-  
-  
+  await redisClient.set(cacheKey, JSON.stringify(allUsers));
   return allUsers;
-}
+  
+    }
 
 
 
