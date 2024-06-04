@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 //const client = createClient(); jj
 
 async function createUser(data) {
-  if (!data || !data.user_id || !data.counter) {
+  if ( !data.sessionId || !data || !data.user_id || !data.counter) {
     return { error: data };
   }
   const user = await prisma.networth.create({
