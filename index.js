@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
   res.json("Prisma and Supabase started");
 });
 
+
 app.get("/createuser", async (req, res) => {
   console.log(req.query); 
   const userData = req.query;
